@@ -616,6 +616,15 @@ config CRYPTO_SHA512_ARM_NEON
 	  This code also includes SHA-384, a 384 bit hash with 192 bits
 	  of security against collision attacks.
 
+config CRYPTO_STRIBOG
+	tristate "GOST R 34.11 2012 algorithms"
+	select CRYPTO_HASH
+	help
+	  GOST R 34.11 2012 secure hash standard.
+	  
+	  This module implements 256-bit and 512-bit Russian GOST R hash
+	  algorihm.
+
 config CRYPTO_TGR192
 	tristate "Tiger digest algorithms"
 	select CRYPTO_HASH
