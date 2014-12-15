@@ -680,6 +680,17 @@ config CRYPTO_AES
 
 	  See <http://csrc.nist.gov/CryptoToolkit/aes/> for more information.
 
+config CRYPTO_GOST
+	tristate "GOST cipher algorithms"
+	select CRYPTO_ALGAPI
+	help
+	  The GOST 28147-89 cipher.
+
+	  This is Russian standard cipher. It is better than DES, but not
+	  than AES. It is required to use in Russian certufued software.
+
+	  The GOST key size of 256 bits
+
 config CRYPTO_AES_586
 	tristate "AES cipher algorithms (i586)"
 	depends on (X86 || UML_X86) && !64BIT
