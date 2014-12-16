@@ -2091,7 +2091,7 @@ encrypted_session_key_set:
 	dest[(*packet_size)++] = 0x03; /* version 3 */
 	memcpy(&dest[(*packet_size)], key_rec->sig, ECRYPTFS_SIG_SIZE);
 	(*packet_size) += ECRYPTFS_SIG_SIZE;
-	dest[(*packet_size)++] = RFC2440_CIPHER_RSA;
+	dest[(*packet_size)++] = RFC2440_CIPHER_GOST_94;
 	memcpy(&dest[(*packet_size)], key_rec->enc_key,
 	       key_rec->enc_key_size);
 	(*packet_size) += key_rec->enc_key_size;
